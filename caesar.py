@@ -17,7 +17,6 @@ def decrypt(m, off):
             i = chr(ord(i)-26)
         elif ord(i)-off < 65:
             i = chr(ord(i)+26)
-    for i in m:
         newM += chr(ord(i)-off)
     print(newM)
 
