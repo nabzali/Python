@@ -1,15 +1,17 @@
-def encrypt(m, off):
+#Nabeel Ali | March 2018 | Caesar Cipher Code
+
+def encrypt(m, off): #encrypts by adding an offset to each character and outputs a new encrypted character
     m = m.upper()
     newM = ""
     for i in m:
-        if ord(i)+off > 90:
+        if ord(i)+off > 90: #error checking - verifies that the ascii value for the new letter is in an appropriate range
             i = chr(ord(i)-26)
         elif ord(i)+off < 65:
             i = chr(ord(i)+26)
         newM += chr(ord(i)+off)
     print(newM)
 
-def decrypt(m, off):
+def decrypt(m, off): #bascially works in the same way but subtracts the offset
     m = m.upper()
     newM = ""
     for i in m:
