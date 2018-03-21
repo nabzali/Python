@@ -1,13 +1,23 @@
 def encrypt(m, off):
+    m = m.upper()
     newM = ""
     for i in m:
+        if ord(i)+off > 90:
+            i = chr(ord(i)-26)
+        elif ord(i)+off < 65:
+            i = chr(ord(i)+26)
         newM += chr(ord(i)+off)
     print(newM)
 
 def decrypt(m, off):
+    m = m.upper()
     newM = ""
     for i in m:
-        if
+        if ord(i)-off > 90:
+            i = chr(ord(i)-26)
+        elif ord(i)-off < 65:
+            i = chr(ord(i)+26)
+    for i in m:
         newM += chr(ord(i)-off)
     print(newM)
 
