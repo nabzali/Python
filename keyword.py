@@ -26,7 +26,6 @@ def decrypt(m, k): #This basically works in the same way but uses subtraction
         newM += chr(new)
     print(newM)
 
-
 message = input("Please enter a message")
 keyword = input("Please enter a keyword")
 option = input("Would you like to encrypt or decrypt")
