@@ -44,7 +44,7 @@ while not(option == "e" or option == "d" or option == "E" or option == "D"):
     option = input("Invalid option, enter again")
 
 fileName = input("Please enter the name of the file")
-if fileName[:-4] != ".txt":
+if fileName[4:] != ".txt":
     fileName += ".txt"
 f = open(fileName, "r")
 contents = f.read()
