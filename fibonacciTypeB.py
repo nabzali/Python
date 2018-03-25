@@ -5,4 +5,4 @@ def fibonacci(n):
         a, b = b, a + b
         print(a)
 
-fibonacci(10)
+fibonacci(int(input("Enter number:")))
