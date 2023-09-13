@@ -1,6 +1,7 @@
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
         #for letter in s, if not in dict, add. if in dict, check correct corresponding letter is stored
+        #also check t is not already in dict.values()
         mydict = {}
         for i in range(len(s)):
             if s[i] not in mydict and t[i] not in mydict.values():
