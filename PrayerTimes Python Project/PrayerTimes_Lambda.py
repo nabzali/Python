@@ -32,15 +32,6 @@ def lambda_handler(event, context):
         finally:
             return response.status_code
     
-    def createPrayerDictionary():
-        dictionary = {}
-        for prayer in prayers:
-            if prayer == "Jummah":
-                dictionary["Jummah"] = [todaysTimes["Jumah_1"], todaysTimes["Jumah_2"]]
-                continue
-            dictionary[prayer] = [todaysTimes[f"{prayer}_Begins"], todaysTimes[f"{prayer}_Jamaat"]]
-        dictionary["Sunrise"] = todaysTimes["Sunrise"]
-        return dictionary
     
     def buildMessage():
         message = f'\n{today.strftime("%A %dth %B %Y")}:\n'
@@ -57,7 +48,14 @@ def lambda_handler(event, context):
             'statusCode': apiCall
         }
     
-    dictionary = createPrayerDictionary()
+    dictionary = {}
+    for prayer in prayers:
+        if prayer == "Jummah":
+            dictionary["Jummah"] = [todaysTimes["Jumah_1"], todaysTimes["Jumah_2"]]
+            continue
+        dictionary[prayer] = [todaysTimes[f"{prayer}_Begins"], todaysTimes[f"{prayer}_Jamaat"]]
+    dictionary["Sunrise"] = todaysTimes["Sunrise"]
+    
     print(dictionary)
     
     response = sns_client.publish(
