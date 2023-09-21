@@ -32,7 +32,7 @@ def lambda_handler(event, context):
         finally:
             return response.status_code
     
-    
+    #hello
     def buildMessage():
         message = f'\n{today.strftime("%A %dth %B %Y")}:\n'
         message += f'Sunrise starts at: {dictionary["Sunrise"]}\n'

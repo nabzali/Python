@@ -3,6 +3,5 @@ PrayerTimes Python Project/*
 
 # Except for 'PrayerTimes_Lambda.py'
 !PrayerTimes Python Project/PrayerTimes_Lambda.py
-
-# Except for the 'Test-Files' folder and its contents
-!PrayerTimes Python Project/Test-Files/
+!PrayerTimes Python Project/PrayerTimes_Lambda.py
+!PrayerTimes Python Project/Testing with Selenium.py
