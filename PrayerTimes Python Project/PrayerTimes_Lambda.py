@@ -31,8 +31,7 @@ def lambda_handler(event, context):
     
         finally:
             return response.status_code
-    
-    #hello
+
     def buildMessage():
         message = f'\n{today.strftime("%A %dth %B %Y")}:\n'
         message += f'Sunrise starts at: {dictionary["Sunrise"]}\n'
@@ -42,10 +41,10 @@ def lambda_handler(event, context):
     
         return message.replace("Zohr", "Zuhr").replace("Magrib", "Maghrib")[:-1]
     
-    apiCall = getData()
-    if apiCall not in range(200, 300):
+    api_call = getData()
+    if api_call not in range(200, 300):
         return {
-            'statusCode': apiCall
+            'statusCode': api_call
         }
     
     dictionary = {}
